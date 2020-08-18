@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.shadow-hard{
+    box-shadow: 1rem 1rem #31302c;
+}
+.ReactCollapse--collapse {
+    transition: height 500ms;
+  }

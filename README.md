@@ -1,0 +1,1 @@
+SPA app built in emotion, react, next, some bs with context api too
