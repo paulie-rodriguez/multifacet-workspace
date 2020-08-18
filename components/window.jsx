@@ -8,7 +8,7 @@ import { Context } from "../state/store";
 
 const styles = {
   window: tw`
-max-w-4xl
+max-w-3xl
 mx-auto
 bg-orange-100
 border-solid
@@ -62,8 +62,8 @@ const Window = ({ children, ...props }) => {
             </div>
             <Collapse isOpened={isOpened}>
               <div css={tw`flex flex-col p-8`}>
-                <h1 css={tw`text-5xl font-serif font-black`}>Hi! Thanks for opening this</h1>
-                <ul css={tw`list-disc text-xl font-sans`}>
+                <h1 css={tw`text-5xl`} className="curvy">Hi! Thanks for opening this</h1>
+                <ul css={tw`list-disc text-xl font-medium`} className="digital">
                   <li>The red button will close this window</li>
                   <li>The yellow button will minimize it</li>
                   <li>The green button will maximize it</li>
