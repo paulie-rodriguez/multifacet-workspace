@@ -9,9 +9,17 @@ module.exports = {
       boxShadow: {
         hard: ".5rem .5rem #31302c",
       },
-      borderRadius:{
+      borderRadius: {
         xl: "1rem",
-      }
+      },
+      strokeWidth: {
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+      },
     },
   },
   variants: {},

@@ -4,13 +4,13 @@ import tw from "@tailwindcssinjs/macro";
 import Draggable from "react-draggable";
 import React, { useState, useContext } from "react";
 import { Collapse } from "react-collapse";
-import { Context } from "../state/store";
+import { Context } from "../../state/store";
 
 const styles = {
   window: tw`
-max-w-3xl
-mx-auto
-bg-orange-100
+max-w-2xl
+w-full
+bg-teal-100
 border-solid
 border-2
 border-gray-900
@@ -18,16 +18,17 @@ rounded-xl
 shadow-hard
 flex
 flex-col
-my-4
+self-start
 `,
 };
-const Window = ({ children, ...props }) => {
+const QuizWindow = ({ children, ...props }) => {
   const [state, dispatch] = useContext(Context);
+  const [isDragging, setIsDragging] = useState({ status: false, zIndex: 1000 });
 
   const [isOpened, setIsOpened] = useState(true);
 
   const handleClose = () => {
-    dispatch({ type: "TOGGLE_INTRO_WINDOW", payload: false });
+    dispatch({ type: "TOGGLE_QUIZ_WINDOW", payload: false });
     console.log(state);
   };
   const handleMinimize = () => {
@@ -38,9 +39,27 @@ const Window = ({ children, ...props }) => {
   };
   return (
     <>
-      {state.isActive ? (
-        <Draggable>
-          <section {...props} css={styles.window}>
+      {state.quizWindow ? (
+         <Draggable
+         bounds="parent"
+         handle=".draggable-block-container"
+         onStart={() =>
+           setIsDragging({
+             ...isDragging,
+             status: true,
+             zIndex: isDragging.zIndex + 1,
+           })
+         }
+         onEnd={() => setIsDragging({ ...isDragging, status: false })}
+       >
+         <section
+           {...props}
+           css={styles.window}
+           className={`draggable-block-container`}
+           style={{
+             zIndex: isDragging.zIndex,
+           }}
+         >
             <div
               css={tw`w-full py-4`}
               className={`${
@@ -62,11 +81,20 @@ const Window = ({ children, ...props }) => {
                 />
               </span>
             </div>
-            <Collapse isOpened={isOpened}>{children}</Collapse>
+            <Collapse isOpened={isOpened}>
+            <div css={tw`flex flex-col p-8`}>
+                <h1 css={tw`text-5xl`} className="curvy">
+                  Quiz time!
+                </h1>
+                <ul css={tw`list-disc text-xl font-medium`} className="digital">
+                  <li>What video game is in the video?</li>
+                </ul>
+              </div>
+            </Collapse>
           </section>
         </Draggable>
       ) : null}
     </>
   );
 };
-export default Window;
+export default QuizWindow;

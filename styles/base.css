@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 
 /* purgecss start ignore */
 
@@ -882,12 +882,18 @@ video {
 }
 
 .curvy {
-  font-family: 'Shrikhand', cursive, Georgia, 'Times New Roman', Times, serif;
+  font-family: "Shrikhand", cursive, Georgia, "Times New Roman", Times, serif;
 }
 
-.digital{
-  font-family: 'Courier New', Courier, monospace
-};
+.digital {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.graph {
+  background-image: linear-gradient(#ff6f61 0.1em, transparent 0.1em),
+    linear-gradient(90deg, #ff6f61 0.1em, transparent 0.1em);
+  background-size: 3em 3em;
+}
 
 /* purgecss end ignore */
 
@@ -26292,6 +26298,30 @@ video {
 
 .stroke-2{
   stroke-width: 2;
+}
+
+.stroke-3{
+  stroke-width: 3;
+}
+
+.stroke-4{
+  stroke-width: 4;
+}
+
+.stroke-5{
+  stroke-width: 5;
+}
+
+.stroke-6{
+  stroke-width: 6;
+}
+
+.stroke-7{
+  stroke-width: 7;
+}
+
+.stroke-8{
+  stroke-width: 8;
 }
 
 .table-auto{
@@ -62313,6 +62343,30 @@ video {
     stroke-width: 2;
   }
 
+  .sm\:stroke-3{
+    stroke-width: 3;
+  }
+
+  .sm\:stroke-4{
+    stroke-width: 4;
+  }
+
+  .sm\:stroke-5{
+    stroke-width: 5;
+  }
+
+  .sm\:stroke-6{
+    stroke-width: 6;
+  }
+
+  .sm\:stroke-7{
+    stroke-width: 7;
+  }
+
+  .sm\:stroke-8{
+    stroke-width: 8;
+  }
+
   .sm\:table-auto{
     table-layout: auto;
   }
@@ -98239,6 +98293,30 @@ video {
 
   .md\:stroke-2{
     stroke-width: 2;
+  }
+
+  .md\:stroke-3{
+    stroke-width: 3;
+  }
+
+  .md\:stroke-4{
+    stroke-width: 4;
+  }
+
+  .md\:stroke-5{
+    stroke-width: 5;
+  }
+
+  .md\:stroke-6{
+    stroke-width: 6;
+  }
+
+  .md\:stroke-7{
+    stroke-width: 7;
+  }
+
+  .md\:stroke-8{
+    stroke-width: 8;
   }
 
   .md\:table-auto{
@@ -134169,6 +134247,30 @@ video {
     stroke-width: 2;
   }
 
+  .lg\:stroke-3{
+    stroke-width: 3;
+  }
+
+  .lg\:stroke-4{
+    stroke-width: 4;
+  }
+
+  .lg\:stroke-5{
+    stroke-width: 5;
+  }
+
+  .lg\:stroke-6{
+    stroke-width: 6;
+  }
+
+  .lg\:stroke-7{
+    stroke-width: 7;
+  }
+
+  .lg\:stroke-8{
+    stroke-width: 8;
+  }
+
   .lg\:table-auto{
     table-layout: auto;
   }
@@ -170095,6 +170197,30 @@ video {
 
   .xl\:stroke-2{
     stroke-width: 2;
+  }
+
+  .xl\:stroke-3{
+    stroke-width: 3;
+  }
+
+  .xl\:stroke-4{
+    stroke-width: 4;
+  }
+
+  .xl\:stroke-5{
+    stroke-width: 5;
+  }
+
+  .xl\:stroke-6{
+    stroke-width: 6;
+  }
+
+  .xl\:stroke-7{
+    stroke-width: 7;
+  }
+
+  .xl\:stroke-8{
+    stroke-width: 8;
   }
 
   .xl\:table-auto{

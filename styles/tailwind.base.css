@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
 .ReactCollapse--collapse {
-    transition: height 500ms;
-  }
-.curvy {
-    font-family: 'Shrikhand', cursive, Georgia, 'Times New Roman', Times, serif;
+  transition: height 500ms;
 }
-.digital{
-font-family: 'Courier New', Courier, monospace
-};
+.curvy {
+  font-family: "Shrikhand", cursive, Georgia, "Times New Roman", Times, serif;
+}
+.digital {
+  font-family: "Courier New", Courier, monospace;
+}
+.graph {
+  background-image: linear-gradient(#ff6f61 0.1em, transparent 0.1em),
+    linear-gradient(90deg, #ff6f61 0.1em, transparent 0.1em);
+  background-size: 3em 3em;
+}
 /* purgecss end ignore */
 @tailwind utilities;

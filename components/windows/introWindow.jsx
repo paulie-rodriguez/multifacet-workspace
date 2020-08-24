@@ -4,12 +4,13 @@ import tw from "@tailwindcssinjs/macro";
 import Draggable from "react-draggable";
 import React, { useState, useContext } from "react";
 import { Collapse } from "react-collapse";
-import { Context } from "../state/store";
+import { Context } from "../../state/store";
 
 const styles = {
   window: tw`
-max-w-3xl
-mx-auto
+xl:max-w-3xl
+lg:max-w-2xl
+md:max-w-xl
 bg-orange-100
 border-solid
 border-2
@@ -18,11 +19,12 @@ rounded-xl
 shadow-hard
 flex
 flex-col
-my-4
+self-start
 `,
 };
-const Window = ({ children, ...props }) => {
+const IntroWindow = ({ children, ...props }) => {
   const [state, dispatch] = useContext(Context);
+  const [isDragging, setIsDragging] = useState({ status: false, zIndex: 1000 });
 
   const [isOpened, setIsOpened] = useState(true);
 
@@ -38,9 +40,27 @@ const Window = ({ children, ...props }) => {
   };
   return (
     <>
-      {state.isActive ? (
-        <Draggable>
-          <section {...props} css={styles.window}>
+      {state.introWindow ? (
+        <Draggable
+          bounds="parent"
+          handle=".draggable-block-container"
+          onStart={() =>
+            setIsDragging({
+              ...isDragging,
+              status: true,
+              zIndex: isDragging.zIndex + 1,
+            })
+          }
+          onEnd={() => setIsDragging({ ...isDragging, status: false })}
+        >
+          <section
+            {...props}
+            css={styles.window}
+            className={`draggable-block-container`}
+            style={{
+              zIndex: isDragging.zIndex,
+            }}
+          >
             <div
               css={tw`w-full py-4`}
               className={`${
@@ -69,4 +89,4 @@ const Window = ({ children, ...props }) => {
     </>
   );
 };
-export default Window;
+export default IntroWindow;
