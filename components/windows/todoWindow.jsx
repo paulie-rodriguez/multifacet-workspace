@@ -19,7 +19,6 @@ const styles = {
   flex
   flex-col
   self-start
-
   `,
   buttonBlue: tw`
   bg-blue-500 
@@ -63,11 +62,11 @@ const Todos = ({ children, ...props }) => {
       isCompleted: false,
     },
     {
-      text: "Take Pop Quiz",
+      text: "Take Quiz",
       isCompleted: false,
     },
     {
-      text: "Provide Feedback on Demo",
+      text: "Provide Feedback",
       isCompleted: false,
     },
   ]);
@@ -127,19 +126,27 @@ const Todos = ({ children, ...props }) => {
                 isOpened ? ` border-b border-gray-900 border-b-2 ` : ` `
               }`}
             >
-              <span css={tw`flex flex-row`}>
-                <button
-                  onClick={handleClose}
-                  css={tw`bg-red-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
-                <button
-                  onClick={handleMinimize}
-                  css={tw`bg-yellow-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
-                <button
-                  onClick={handleMaximize}
-                  css={tw`bg-green-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
+             <span css={tw`flex flex-row justify-between`}>
+                <div css={tw``}>
+                  <button
+                    onClick={handleClose}
+                    css={tw`bg-red-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                  <button
+                    onClick={handleMinimize}
+                    css={tw`bg-yellow-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                  <button
+                    onClick={handleMaximize}
+                    css={tw`bg-green-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                </div>
+                <p
+                  css={tw`text-xl mx-auto`}
+                  className={` ${isOpened ? `hidden` : `block`}`}
+                >
+                  Todo List
+                </p>
               </span>
             </div>
             <Collapse isOpened={isOpened}>

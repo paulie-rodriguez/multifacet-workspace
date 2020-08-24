@@ -41,45 +41,53 @@ const LessonWindow = ({ children, ...props }) => {
   return (
     <>
       {state.lessonWindow ? (
-         <Draggable
-         bounds="parent"
-         handle=".draggable-block-container"
-         onStart={() =>
-           setIsDragging({
-             ...isDragging,
-             status: true,
-             zIndex: isDragging.zIndex + 1,
-           })
-         }
-         onEnd={() => setIsDragging({ ...isDragging, status: false })}
-       >
-         <section
-           {...props}
-           css={styles.window}
-           className={`draggable-block-container`}
-           style={{
-             zIndex: isDragging.zIndex,
-           }}
-         >
+        <Draggable
+          bounds="parent"
+          handle=".draggable-block-container"
+          onStart={() =>
+            setIsDragging({
+              ...isDragging,
+              status: true,
+              zIndex: isDragging.zIndex + 1,
+            })
+          }
+          onEnd={() => setIsDragging({ ...isDragging, status: false })}
+        >
+          <section
+            {...props}
+            css={styles.window}
+            className={`draggable-block-container`}
+            style={{
+              zIndex: isDragging.zIndex,
+            }}
+          >
             <div
               css={tw`w-full py-4`}
               className={`${
                 isOpened ? ` border-b border-gray-900 border-b-2 ` : ` `
               }`}
             >
-              <span css={tw`flex flex-row`}>
-                <button
-                  onClick={handleClose}
-                  css={tw`bg-red-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
-                <button
-                  onClick={handleMinimize}
-                  css={tw`bg-yellow-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
-                <button
-                  onClick={handleMaximize}
-                  css={tw`bg-green-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
+              <span css={tw`flex flex-row justify-between`}>
+                <div css={tw``}>
+                  <button
+                    onClick={handleClose}
+                    css={tw`bg-red-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                  <button
+                    onClick={handleMinimize}
+                    css={tw`bg-yellow-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                  <button
+                    onClick={handleMaximize}
+                    css={tw`bg-green-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                </div>
+                <p
+                  css={tw`text-xl mx-auto`}
+                  className={` ${isOpened ? `hidden` : `block`}`}
+                >
+                  Lesson Window
+                </p>
               </span>
             </div>
             <Collapse isOpened={isOpened}>
@@ -87,7 +95,7 @@ const LessonWindow = ({ children, ...props }) => {
               css={tw`rounded-xl w-full`}
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/7e62rPPsV-0"
+                src="https://www.youtube.com/embed/Td0KdNqGyoU"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen

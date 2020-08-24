@@ -67,19 +67,27 @@ const IntroWindow = ({ children, ...props }) => {
                 isOpened ? ` border-b border-gray-900 border-b-2 ` : ` `
               }`}
             >
-              <span css={tw`flex flex-row`}>
-                <button
-                  onClick={handleClose}
-                  css={tw`bg-red-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
-                <button
-                  onClick={handleMinimize}
-                  css={tw`bg-yellow-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
-                <button
-                  onClick={handleMaximize}
-                  css={tw`bg-green-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
-                />
+              <span css={tw`flex flex-row justify-between`}>
+                <div css={tw``}>
+                  <button
+                    onClick={handleClose}
+                    css={tw`bg-red-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                  <button
+                    onClick={handleMinimize}
+                    css={tw`bg-yellow-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                  <button
+                    onClick={handleMaximize}
+                    css={tw`bg-green-300 p-2 rounded-full border-2 border-gray-900 mx-2`}
+                  />
+                </div>
+                <p
+                  css={tw`text-xl mx-auto`}
+                  className={` ${isOpened ? `hidden` : `block`}`}
+                >
+                  Daily Introduction
+                </p>
               </span>
             </div>
             <Collapse isOpened={isOpened}>{children}</Collapse>

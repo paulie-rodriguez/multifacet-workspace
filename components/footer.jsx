@@ -4,8 +4,7 @@ import tw from "@tailwindcssinjs/macro";
 
 const Footer=()=>{
   return(
-    <div css={tw`bg-orange-100 py-12 w-full flex flex-row`}>
-      <p>Im the toolbar</p>
+    <div css={tw`bg-orange-100 py-40 w-full flex flex-row`}>
     </div>
   )
 }

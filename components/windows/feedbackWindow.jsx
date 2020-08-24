@@ -95,10 +95,13 @@ const FeedbackWindow = ({ children, ...props }) => {
                 <h1 css={tw`text-5xl`} className="curvy">
                   Feedback time!
                 </h1>
-                <ul css={tw`list-disc text-xl font-medium`} className="digital">
-                  <li>Is this an easy flow to understand?</li>
-                  <li></li>
-                  <li>The green button will maximize it</li>
+                <ul css={tw`list-disc text-xl font-medium text-gray-900 font-sans`}>
+                  <li>Could this design pattern scale well as a workspace gains complexity? What are some downfalls that could occur if more apps get added to a workspace?</li>
+                  <li>What are some drawbacks to a single page approach for this problem?</li>
+                  <li>Would it be useful to have windows resizable? And what is the drawback to having windows interactive?</li>
+                  <li>Is this design pattern familiar enough to empower users with a smaller learning curve?</li>
+                  <li>What are some other use cases that could benefit from a solution like this?</li>
+                  <li>Any additional thoughts/comments:</li>
                 </ul>
               </div>
             </Collapse>
